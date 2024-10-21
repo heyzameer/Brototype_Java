@@ -1,0 +1,4 @@
+A Set is a collection that contains no duplicate elements. The most commonly used implementation of Set is HashSet.
+
+// Convert array to a Set (removes duplicates)
+        Set<String> fruitsSet = new HashSet<>(Arrays.asList(fruitsArray));

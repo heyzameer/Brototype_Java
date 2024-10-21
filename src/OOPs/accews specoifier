@@ -1,0 +1,119 @@
+Access Specifiers in Java
+In Java, access specifiers (also known as access modifiers) are keywords that control the visibility or accessibility of classes, methods, constructors, and variables. They determine how accessible these elements are within the class itself, within the package, subclasses, or outside the package.
+
+Java provides four main access specifiers:
+
+Public
+Private
+Protected
+Default (Package-Private)
+1. Public Access Modifier
+Keyword: public
+Visibility: The class, method, constructor, or variable declared as public is accessible from anywhere, i.e., from any other class, package, or even from outside the program (in case of public classes).
+Key Points:
+Can be accessed from the same class, package, subclass, and any other package.
+A public class can be instantiated by any other class.
+Example:
+java
+Copy code
+public class PublicClass {
+    public int number = 5;
+
+    public void display() {
+        System.out.println("This is a public method.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        PublicClass obj = new PublicClass();
+        System.out.println(obj.number);  // Accessible
+        obj.display();                   // Accessible
+    }
+}
+2. Private Access Modifier
+Keyword: private
+Visibility: The class members (variables, methods, or constructors) declared as private are only accessible within the same class. They are hidden from all other classes, including subclasses or classes in the same package.
+Key Points:
+Only accessible within the same class.
+Not visible to subclasses or classes in the same package.
+Provides the highest level of data hiding.
+Example:
+java
+Copy code
+public class PrivateClass {
+    private int number = 10;
+
+    private void display() {
+        System.out.println("This is a private method.");
+    }
+
+    public void accessPrivateMethod() {
+        display(); // Accessible within the same class
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        PrivateClass obj = new PrivateClass();
+        // System.out.println(obj.number);  // Compilation error: number is private
+        // obj.display();  // Compilation error: display() is private
+        obj.accessPrivateMethod();  // Access through public method
+    }
+}
+3. Protected Access Modifier
+Keyword: protected
+Visibility: The members declared as protected can be accessed within the same package and by subclasses in other packages. It is more restrictive than public but less restrictive than private.
+Key Points:
+Accessible within the same package and subclasses (even if they are in a different package).
+Suitable for inheritance scenarios.
+Protected members can be accessed by subclasses using inheritance.
+Example:
+java
+Copy code
+package packageA;
+
+public class ProtectedClass {
+    protected int number = 20;
+
+    protected void display() {
+        System.out.println("This is a protected method.");
+    }
+}
+
+package packageB;
+
+import packageA.ProtectedClass;
+
+public class SubClass extends ProtectedClass {
+    public static void main(String[] args) {
+        SubClass obj = new SubClass();
+        System.out.println(obj.number);  // Accessible via inheritance
+        obj.display();                   // Accessible via inheritance
+    }
+}
+4. Default Access Modifier (Package-Private)
+Keyword: No keyword is required (it’s the default access level).
+Visibility: Members declared without any access modifier are accessible only within the same package (also called package-private access). They cannot be accessed from classes in other packages, including subclasses.
+Key Points:
+Accessible within the same package only.
+Not accessible from subclasses or classes in different packages.
+No specific keyword is used to define this.
+Example:
+java
+Copy code
+class DefaultClass {
+    int number = 30;  // Default access (Package-Private)
+
+    void display() {
+        System.out.println("This is a default access method.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        DefaultClass obj = new DefaultClass();
+        System.out.println(obj.number);  // Accessible within the same package
+        obj.display();                   // Accessible within the same package
+    }
+}

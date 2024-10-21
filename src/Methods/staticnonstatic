@@ -1,0 +1,9 @@
+Summary of Differences
+With static:
+
+All instances share the same count.
+The getCount() method can be called without creating an instance.
+Without static:
+
+Each instance maintains its own separate count.
+The getCount() method must be called on an instance.

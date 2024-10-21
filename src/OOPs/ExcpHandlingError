@@ -1,0 +1,186 @@
+### Exception Handling and Errors in Java
+
+**Exception Handling** in Java is a powerful mechanism used to handle runtime errors, ensuring that the normal flow of a program is maintained. Errors, on the other hand, are serious issues that typically indicate something is fundamentally wrong with the system, and they are generally not recoverable by the application.
+
+---
+
+### 1. **Exceptions**
+
+**Exception** is an event that occurs during the execution of a program and disrupts its normal flow. When an exception occurs, the program terminates abnormally, and exception handling ensures that the program doesn't crash.
+
+#### Types of Exceptions
+
+1. **Checked Exceptions**:
+   - These are the exceptions that are checked at **compile-time**.
+   - If a method throws a checked exception, it must be either caught within a `try-catch` block or declared using the `throws` keyword.
+   - Examples: `IOException`, `SQLException`, `FileNotFoundException`, `ClassNotFoundException`.
+
+2. **Unchecked Exceptions (Runtime Exceptions)**:
+   - These exceptions are checked at **runtime**.
+   - These are usually caused by logical errors or improper use of API.
+   - Examples: `ArithmeticException`, `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`.
+
+3. **Errors**:
+   - **Errors** are serious problems that are not typically handled by Java applications because they represent problems that cannot be recovered from.
+   - Examples: `OutOfMemoryError`, `StackOverflowError`, `VirtualMachineError`.
+
+---
+
+### Exception Handling in Java
+
+Java provides **five keywords** to handle exceptions:
+1. **try**
+2. **catch**
+3. **finally**
+4. **throw**
+5. **throws**
+
+#### 1. **try** block:
+The code that might throw an exception is placed inside a `try` block. This block allows you to monitor a piece of code that may throw an exception.
+
+#### 2. **catch** block:
+When an exception occurs in the `try` block, the corresponding `catch` block is executed. The `catch` block handles the specific type of exception.
+
+#### 3. **finally** block:
+The `finally` block is used to execute important code such as closing resources. It always executes whether an exception is handled or not.
+
+#### 4. **throw**:
+The `throw` keyword is used to explicitly throw an exception.
+
+#### 5. **throws**:
+The `throws` keyword is used in method declarations to specify that a method can throw exceptions.
+
+---
+
+### Basic Example of Exception Handling
+
+```java
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int data = 100 / 0;  // This will throw ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+```
+
+**Output**:
+```
+ArithmeticException: / by zero
+Finally block executed
+```
+
+---
+
+### Exception Handling Flow
+
+1. When an exception occurs in a `try` block, the JVM looks for an appropriate `catch` block.
+2. If the exception is caught, the flow of execution jumps to the `catch` block.
+3. The `finally` block is executed whether the exception is caught or not.
+4. If no exception is thrown, the `catch` block is skipped, and the `finally` block is executed.
+
+### Throwing an Exception
+
+You can use the `throw` keyword to explicitly throw an exception. For example:
+
+```java
+public class TestThrow {
+    public static void validate(int age) {
+        if (age < 18) {
+            throw new ArithmeticException("Age not valid");
+        } else {
+            System.out.println("Welcome!");
+        }
+    }
+
+    public static void main(String[] args) {
+        validate(15);  // This will throw an ArithmeticException
+    }
+}
+```
+
+**Output**:
+```
+Exception in thread "main" java.lang.ArithmeticException: Age not valid
+```
+
+---
+
+### Using `throws` in Methods
+
+If a method can throw a checked exception, you can declare it using the `throws` keyword. This forces the calling method to handle or declare the exception.
+
+```java
+import java.io.IOException;
+
+public class TestThrows {
+    public void readFile() throws IOException {
+        // Code that may throw an IOException
+        throw new IOException("File not found");
+    }
+
+    public static void main(String[] args) {
+        TestThrows obj = new TestThrows();
+        try {
+            obj.readFile();  // Handle exception
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+### 2. **Errors**
+
+An **error** represents a serious issue that usually indicates a problem with the underlying system, and it is generally not recoverable by the application. These are issues beyond the control of the program.
+
+#### Types of Errors:
+1. **OutOfMemoryError**: Thrown when the JVM cannot allocate enough memory.
+2. **StackOverflowError**: Thrown when a method recursively calls itself too many times, leading to a stack overflow.
+3. **VirtualMachineError**: Thrown when the Java Virtual Machine has problems such as running out of memory or other internal errors.
+
+#### Example of an Error:
+```java
+public class StackOverflowDemo {
+    public static void recursiveMethod() {
+        recursiveMethod();  // Infinite recursion leading to StackOverflowError
+    }
+
+    public static void main(String[] args) {
+        recursiveMethod();
+    }
+}
+```
+
+**Output**:
+```
+Exception in thread "main" java.lang.StackOverflowError
+```
+
+#### Handling Errors:
+- Errors are generally **unchecked** and not meant to be caught or handled.
+- Errors indicate **serious problems** (such as memory leaks) and usually require fixing the underlying issue rather than catching them.
+
+---
+
+### Difference Between Exceptions and Errors
+
+| Aspect          | Exception                                            | Error                                             |
+|-----------------|------------------------------------------------------|---------------------------------------------------|
+| **Definition**  | An event that disrupts the normal flow of the program | A serious problem that an application cannot handle|
+| **Recoverable** | Generally recoverable using exception handling        | Not recoverable, indicates a system-level problem  |
+| **Type**        | Can be checked or unchecked                           | Always unchecked                                  |
+| **Examples**    | `IOException`, `NullPointerException`, `ArithmeticException` | `OutOfMemoryError`, `StackOverflowError`, `VirtualMachineError` |
+| **Handling**    | Can be caught and handled using `try-catch` blocks    | Not meant to be caught or handled by the application|
+
+---
+
+### Conclusion
+
+In Java, **exceptions** represent conditions that can disrupt program execution but can typically be recovered from using exception handling mechanisms (`try-catch`, `throw`, `throws`). **Errors**, on the other hand, represent serious system-level issues that cannot be easily handled or recovered from by the application. By handling exceptions properly, you can ensure that your program runs smoothly even when faced with unexpected conditions.
