@@ -1,6 +1,6 @@
 package Patterns;
 
-public class PiramidRotate_p90 {
+public class PyramidRotate_p90 {
 
      public static void main(String[] args) {
             int n = 5;
