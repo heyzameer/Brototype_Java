@@ -6,7 +6,7 @@ class SingleInheritance {
     }
 }
 
-class SubClass extends SingleInheritance {
+class subclass extends SingleInheritance {
     void show() {
         System.out.println("This is the SubClass inheriting from SingleInheritance.");
     }
@@ -14,7 +14,7 @@ class SubClass extends SingleInheritance {
 
 public class SingleInheritanceMain {
     public static void main(String[] args) {
-        SubClass obj = new SubClass();
+        subclass obj = new subclass();
         obj.display(); // Inherited method
         obj.show();    // SubClass method
     }

@@ -11,7 +11,7 @@ class SubClass extends MultilevelInheritance {
     }
 }
 
-class SubSubClass extends SubClass {
+class SubSubClass extends subclass {
     void print() {
         System.out.println("This is the SubSubClass inheriting from SubClass.");
     }
