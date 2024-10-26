@@ -1,0 +1,131 @@
+**Object-Oriented Programming (OOP) in Java**
+
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code: data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods). OOP is designed to increase the flexibility and maintainability of programs.
+
+### Key Concepts of OOP
+
+1. **Classes and Objects**:
+   - **Class**: A blueprint for creating objects. It defines properties (attributes) and behaviors (methods) that the created objects will have.
+   - **Object**: An instance of a class. It is created from a class and can use the properties and methods defined in that class.
+
+   ```java
+   class Car {
+       String color;
+       String model;
+
+       void displayDetails() {
+           System.out.println("Car model: " + model + ", Color: " + color);
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Car myCar = new Car(); // Creating an object of the Car class
+           myCar.color = "Red";
+           myCar.model = "Toyota";
+           myCar.displayDetails(); // Output: Car model: Toyota, Color: Red
+       }
+   }
+   ```
+
+2. **Encapsulation**:
+   - The practice of wrapping data (attributes) and code (methods) together as a single unit, restricting direct access to some of the object’s components. This is typically done using access modifiers (like `private`, `protected`, and `public`).
+
+   ```java
+   class Person {
+       private String name; // private variable
+
+       public void setName(String name) { // setter method
+           this.name = name;
+       }
+
+       public String getName() { // getter method
+           return name;
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Person person = new Person();
+           person.setName("Alice");
+           System.out.println(person.getName()); // Output: Alice
+       }
+   }
+   ```
+
+3. **Inheritance**:
+   - A mechanism where one class can inherit the attributes and methods of another class. This promotes code reusability.
+
+   ```java
+   class Animal {
+       void eat() {
+           System.out.println("Animal eats");
+       }
+   }
+
+   class Dog extends Animal { // Dog is a subclass of Animal
+       void bark() {
+           System.out.println("Dog barks");
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Dog dog = new Dog();
+           dog.eat(); // Output: Animal eats
+           dog.bark(); // Output: Dog barks
+       }
+   }
+   ```
+
+4. **Polymorphism**:
+   - The ability of different classes to be treated as instances of the same class through a common interface. It can be achieved via method overloading and method overriding.
+
+   - **Method Overloading**: Same method name with different parameters in the same class.
+
+   ```java
+   class MathUtils {
+       int add(int a, int b) {
+           return a + b;
+       }
+
+       double add(double a, double b) {
+           return a + b;
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           MathUtils math = new MathUtils();
+           System.out.println(math.add(5, 10)); // Output: 15
+           System.out.println(math.add(5.5, 10.5)); // Output: 16.0
+       }
+   }
+   ```
+
+   - **Method Overriding**: A subclass provides a specific implementation of a method that is already defined in its superclass.
+
+   ```java
+   class Animal {
+       void sound() {
+           System.out.println("Animal makes a sound");
+       }
+   }
+
+   class Cat extends Animal {
+       void sound() { // overriding method
+           System.out.println("Cat meows");
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Animal myCat = new Cat();
+           myCat.sound(); // Output: Cat meows
+       }
+   }
+   ```
+
+### Summary
+
+OOP in Java enables developers to create modular and reusable code. The key principles—**Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**—provide a structured approach to software development, making it easier to manage and evolve large codebases. By using classes and objects, you can model real-world entities more effectively in your applications.
