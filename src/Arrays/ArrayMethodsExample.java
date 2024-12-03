@@ -19,7 +19,7 @@ public class ArrayMethodsExample {
 
         // 4. Copying
         int[] originalArray = {1, 2, 3, 4, 5};
-        int[] copiedArray = Arrays.copyOf(originalArray, 3);
+        int[] copiedArray = Arrays.copyOf(originalArray,3);
         System.out.println("Copied Array: " + Arrays.toString(copiedArray)); // Output: [1, 2, 3]
 
         // 5. Comparing
