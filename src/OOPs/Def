@@ -8,25 +8,36 @@ Object-Oriented Programming (OOP) is a programming paradigm based on the concept
    - **Class**: A blueprint for creating objects. It defines properties (attributes) and behaviors (methods) that the created objects will have.
    - **Object**: An instance of a class. It is created from a class and can use the properties and methods defined in that class.
 
-   ```java
+   // Define a class called Car
    class Car {
-       String color;
+       // Instance variables
        String model;
+       int year;
 
-       void displayDetails() {
-           System.out.println("Car model: " + model + ", Color: " + color);
+       // Constructor to initialize values
+       public Car(String model, int year) {
+           this.model = model;
+           this.year = year;
+       }
+
+       // Method to display car details
+       void displayCarInfo() {
+           System.out.println("Model: " + model + ", Year: " + year);
        }
    }
 
    public class Main {
        public static void main(String[] args) {
-           Car myCar = new Car(); // Creating an object of the Car class
-           myCar.color = "Red";
-           myCar.model = "Toyota";
-           myCar.displayDetails(); // Output: Car model: Toyota, Color: Red
+           // Create objects of the Car class
+           Car car1 = new Car("Toyota", 2020);
+           Car car2 = new Car("Honda", 2021);
+
+           // Call methods on objects
+           car1.displayCarInfo();
+           car2.displayCarInfo();
        }
    }
-   ```
+
 
 2. **Encapsulation**:
    - The practice of wrapping data (attributes) and code (methods) together as a single unit, restricting direct access to some of the object’s components. This is typically done using access modifiers (like `private`, `protected`, and `public`).
