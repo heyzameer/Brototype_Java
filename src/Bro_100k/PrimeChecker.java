@@ -20,7 +20,6 @@ public class PrimeChecker {
         // Close the scanner
         scanner.close();
     }
-
     // Method to check if a number is prime
     public static boolean isPrime(int num) {
         // Handle edge cases
@@ -40,7 +39,9 @@ public class PrimeChecker {
                 return false; // Found a factor, not prime
             }
         }
-
         return true; // No factors found, it's prime
     }
 }
+
+
+
