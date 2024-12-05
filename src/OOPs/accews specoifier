@@ -117,3 +117,133 @@ public class Test {
         obj.display();                   // Accessible within the same package
     }
 }
+
+
+In Java, **non-access modifiers** are keywords that provide additional functionality or behavior to classes, methods, or variables, but they don't control **access level** (like `public`, `private`, or `protected`). These modifiers include `static`, `final`, `abstract`, `synchronized`, `volatile`, and others.
+
+Here's a breakdown of some important non-access modifiers:
+
+### 1. **`static`**
+- **Usage**: Can be applied to variables, methods, blocks, and nested classes.
+- **Purpose**: Belongs to the class, not instances of the class.
+  - Static variables: Shared among all instances.
+  - Static methods: Can be called without creating an object.
+
+**Example:**
+```java
+class Example {
+    static int counter = 0;  // Shared by all instances
+
+    public static void incrementCounter() {
+        counter++;
+    }
+}
+```
+
+### 2. **`final`**
+- **Usage**: Can be applied to classes, methods, and variables.
+- **Purpose**:
+  - **`final` class**: Prevents inheritance (i.e., no subclass can extend a `final` class).
+  - **`final` method**: Prevents method overriding.
+  - **`final` variable**: Prevents reassignment (i.e., makes the variable constant).
+
+**Example:**
+```java
+final class MyClass {    // Cannot be subclassed
+    final int MAX_VALUE = 100;  // Cannot be changed
+
+    final void display() {  // Cannot be overridden
+        System.out.println("Display method");
+    }
+}
+```
+
+### 3. **`abstract`**
+- **Usage**: Can be applied to classes and methods.
+- **Purpose**:
+  - **`abstract` class**: Cannot be instantiated and may contain abstract methods (methods without implementation).
+  - **`abstract` method**: Must be implemented by any subclass.
+
+**Example:**
+```java
+abstract class Animal {
+    abstract void sound();  // No implementation, must be implemented by subclasses
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Woof!");
+    }
+}
+```
+
+### 4. **`synchronized`**
+- **Usage**: Can be applied to methods or blocks.
+- **Purpose**: Used for thread synchronization, ensuring that only one thread can access the method or block at a time.
+
+**Example:**
+```java
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {  // Thread-safe method
+        count++;
+    }
+}
+```
+
+### 5. **`volatile`**
+- **Usage**: Can be applied to variables.
+- **Purpose**: Indicates that a variable may be modified by multiple threads, ensuring that the latest value is always read from memory.
+
+**Example:**
+```java
+class SharedData {
+    volatile boolean flag = false;  // Ensures the latest value is read
+}
+```
+
+### 6. **`transient`**
+- **Usage**: Can be applied to instance variables.
+- **Purpose**: Prevents the variable from being serialized (i.e., excluded from object serialization).
+
+**Example:**
+```java
+class Person implements Serializable {
+    String name;
+    transient int age;  // Will not be serialized
+}
+```
+
+### 7. **`strictfp`**
+- **Usage**: Can be applied to classes, methods, and interfaces.
+- **Purpose**: Ensures floating-point calculations are consistent across different platforms.
+
+**Example:**
+```java
+strictfp class Calculator {
+    public float calculate() {
+        return 1.2f + 2.3f;
+    }
+}
+```
+
+---
+
+### **Summary of Common Non-Access Modifiers**
+
+| Modifier   | Usage                        | Purpose |
+|------------|------------------------------|---------|
+| `static`   | Methods, variables, blocks    | Belongs to the class, not instances |
+| `final`    | Classes, methods, variables   | Prevents inheritance, overriding, or reassignment |
+| `abstract` | Classes, methods              | Defines classes or methods without implementation |
+| `synchronized` | Methods, blocks          | Ensures thread safety |
+| `volatile` | Variables                     | Ensures consistent variable value in multi-threading |
+| `transient`| Instance variables            | Excludes from serialization |
+| `strictfp` | Classes, methods, interfaces  | Ensures consistent floating-point calculations |
+
+---
+
+These modifiers are essential for controlling behaviors beyond access restrictions, like thread-safety, inheritance, and serialization.
+
+Let me know if you'd like to explore any specific non-access modifiers in more detail!

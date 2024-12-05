@@ -10,3 +10,24 @@ The final Keyword
 If you don't want other classes to inherit from a class, use the final keyword:
 
 If you try to access a final class, Java will generate an error:
+
+
+
+Inheritance in Java
+Inheritance is another key concept in Object-Oriented Programming (OOP) that allows one class to inherit properties and behaviors (fields and methods) from another class. It promotes code reuse, and the ability to create a hierarchical relationship between classes.
+
+In Java, inheritance allows you to create a new class (called the subclass or child class) that inherits the members (fields and methods) of an existing class (called the superclass or parent class). The subclass can then add new members or override inherited methods to modify or extend their functionality.
+
+Key Terms:
+Superclass (Parent class): The class whose properties and methods are inherited by another class.
+Subclass (Child class): The class that inherits the properties and methods of the superclass.
+extends keyword: Used to indicate that a class is inheriting from another class.
+Types of Inheritance in Java:
+Single Inheritance: A subclass inherits from only one superclass.
+Multilevel Inheritance: A class can inherit from a class that is also a subclass.
+Hierarchical Inheritance: Multiple subclasses inherit from a single superclass.
+Multiple Inheritance (via interfaces): Java does not support multiple inheritance (inheriting from more than one class), but a class can implement multiple interfaces.
+Benefits of Inheritance:
+Code Reusability: Inheritance allows the reuse of code from the parent class, so you don’t need to write the same code multiple times.
+Method Overriding: Subclasses can modify or extend the behavior of methods inherited from the parent class.
+Extensibility: Subclasses can add more features or modify the inherited features without changing the parent class.

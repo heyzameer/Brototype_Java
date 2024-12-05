@@ -26,7 +26,7 @@ public class FrequencyCounter {
 
             // Print results
             for (int i = 0; i < arr.length; i++) {
-                if (freq[i] != -1) { // Only print for unvisited indices
+                if (freq[i]!=-1) { // Only print for unvisited indices
                     System.out.println("Element " + arr[i] + " occurs " + freq[i] + " times");
                 }
             }

@@ -1,0 +1,89 @@
+In Java, **data types** are broadly categorized into **primitive** and **non-primitive (reference)** types. Here's a detailed explanation of both:
+
+---
+
+### **Primitive Data Types**
+- **Definition:**
+  Primitive data types are the most basic types of data, built into Java. They represent simple values like numbers, characters, and booleans.
+
+- **Characteristics:**
+  1. **Predefined:** They are built into the language.
+  2. **Not Objects:** They store values directly, not references.
+  3. **Fixed Size:** Each type has a specific size and range.
+  4. **Efficient:** They are faster since they operate directly on memory.
+
+- **Types of Primitive Data Types in Java:**
+
+| Data Type   | Description        | Size      | Example          |
+|-------------|--------------------|-----------|------------------|
+| `byte`      | 8-bit integer      | 1 byte    | `byte b = 10;`   |
+| `short`     | 16-bit integer     | 2 bytes   | `short s = 100;` |
+| `int`       | 32-bit integer     | 4 bytes   | `int i = 1000;`  |
+| `long`      | 64-bit integer     | 8 bytes   | `long l = 10000L;`|
+| `float`     | 32-bit floating-point| 4 bytes | `float f = 10.5f;`|
+| `double`    | 64-bit floating-point| 8 bytes | `double d = 20.5;`|
+| `char`      | Single 16-bit character | 2 bytes | `char c = 'A';`  |
+| `boolean`   | True/False         | 1 bit     | `boolean flag = true;` |
+
+---
+
+### **Non-Primitive (Reference) Data Types**
+- **Definition:**
+  Non-primitive types refer to objects or arrays. They are created by the programmer or provided by Java's class library.
+
+- **Characteristics:**
+  1. **Customizable:** Created by defining classes, interfaces, or arrays.
+  2. **Stores References:** They hold memory addresses pointing to the actual data.
+  3. **Dynamic Size:** Their size depends on the object or data they reference.
+  4. **Methods:** Can have methods to manipulate data or behavior.
+
+- **Examples of Non-Primitive Data Types:**
+  1. **Strings:**
+     ```java
+     String name = "Java";
+     ```
+  2. **Arrays:**
+     ```java
+     int[] numbers = {1, 2, 3};
+     ```
+  3. **Objects:**
+     ```java
+     class Person {
+         String name;
+         int age;
+     }
+     Person p = new Person();
+     p.name = "John";
+     p.age = 25;
+     ```
+
+---
+
+### **Key Differences Between Primitive and Non-Primitive Types**
+
+| Feature                     | Primitive Types                      | Non-Primitive Types                |
+|-----------------------------|---------------------------------------|-------------------------------------|
+| **Nature**                  | Built-in data types.                 | User-defined or pre-built classes. |
+| **Size**                    | Fixed size (depends on type).         | Dynamic (depends on object).       |
+| **Storage**                 | Stores actual value.                 | Stores a reference to the value.   |
+| **Methods**                 | No methods available.                | Methods can be applied.            |
+| **Example**                 | `int x = 10;`                        | `String str = "Hello";`            |
+
+---
+
+### **Boxing and Unboxing**
+In Java, primitive types can be converted to objects using **wrapper classes**, which are non-primitive.
+- **Boxing:** Converting a primitive to a wrapper object.
+  ```java
+  int x = 10;
+  Integer obj = Integer.valueOf(x);  // Boxing
+  ```
+- **Unboxing:** Converting a wrapper object back to a primitive.
+  ```java
+  Integer obj = 10;
+  int x = obj.intValue();  // Unboxing
+  ```
+
+---
+
+Let me know if you'd like code examples or further explanation on any of these concepts!

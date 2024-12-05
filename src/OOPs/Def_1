@@ -1,0 +1,85 @@
+Your query "what, how, why" can be interpreted as asking for a detailed breakdown of **"What is OOP and POP?", "How are they different?", and "Why is OOP better?"** Here's a structured explanation:
+
+---
+
+### **What is OOP and POP?**
+- **POP (Procedural Oriented Programming):**
+  - A paradigm where the focus is on functions (procedures) and step-by-step instructions.
+  - Data is global or shared and is manipulated by functions.
+  - Example: C language, where you create functions to perform operations on global variables.
+
+- **OOP (Object Oriented Programming):**
+  - A paradigm where the focus is on objects that represent entities combining **data** (attributes) and **behavior** (methods).
+  - Example: Java or Python, where you create classes and objects to model real-world entities.
+
+---
+
+### **How are they different?**
+
+| Aspect              | POP (Procedural)                                  | OOP (Object-Oriented)                             |
+|---------------------|---------------------------------------------------|--------------------------------------------------|
+| **Structure**       | Organized as functions and procedures.            | Organized as objects and classes.               |
+| **Focus**           | Focuses on *how* to perform tasks (step-by-step). | Focuses on *what* objects are and their behavior. |
+| **Data Handling**   | Data is shared globally and modified by functions.| Data is encapsulated within objects for security.|
+| **Reusability**     | Functions are reusable but may not fit new use cases.| Classes and inheritance promote modular reuse.   |
+| **Example**         | A function to calculate area.                     | A `Rectangle` object that calculates its own area. |
+
+---
+
+### **Why is OOP Better?**
+1. **Organized Code:**
+   - OOP groups data and behavior, making code modular and easier to manage compared to POP's scattered functions and global data.
+
+2. **Scalability:**
+   - Classes and inheritance make it easier to add new functionality without altering existing code.
+
+3. **Security:**
+   - Encapsulation hides internal details, protecting sensitive data.
+
+4. **Real-World Modeling:**
+   - Objects map to real-world entities, making systems intuitive and relatable.
+
+5. **Flexibility:**
+   - Polymorphism allows objects to use the same interface for different behaviors.
+
+---
+
+### Example to Tie It Together
+#### **POP Approach:**
+```c
+#include <stdio.h>
+
+// Function for area
+int calculateArea(int length, int breadth) {
+    return length * breadth;
+}
+
+int main() {
+    int length = 10, breadth = 5;
+    printf("Area: %d\n", calculateArea(length, breadth));
+    return 0;
+}
+```
+
+#### **OOP Approach:**
+```python
+class Rectangle:
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+
+    def calculate_area(self):
+        return self.length * self.breadth
+
+# Object-Oriented Design
+rect = Rectangle(10, 5)
+print("Area:", rect.calculate_area())
+```
+
+- **Why is OOP Better Here?**
+  - In OOP, the object (`Rectangle`) manages its own state and behavior, making the design cleaner and more extendable.
+  - In POP, you must manually manage data (length, breadth) and functions separately, which can become messy for larger systems.
+
+---
+
+Let me know if you'd like more examples or further clarification!

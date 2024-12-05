@@ -7,7 +7,7 @@
 //Runtime Polymorphism: Method overriding enables runtime polymorphism, where the method to be called is determined at runtime based on the object's actual type.
 package Methods;
 
-public class MethodOverloadingExample {
+public class methodOverloadingExample {
 
     // Method to add two integers
     public static int add(int a, int b) {
@@ -35,3 +35,15 @@ public class MethodOverloadingExample {
         System.out.println("Sum of two doubles: " + sum3); // Output: Sum of two doubles: 31.0
     }
 }
+//There is a concept where two or more methods can have the same name. But they
+//should have different parameters, different numbers of parameters, different types of
+//parameters, or both. These methods are known as overloaded methods and this feature
+//is called method overloading.
+
+//Same Name: All methods have the same name.
+//Different Parameters:
+//Vary in the number of parameters.
+//Vary in the types of parameters.
+//Vary in the sequence of parameter types.
+//Return Type:
+//The return type alone does not distinguish overloaded methods (it is not sufficient for overloading).
