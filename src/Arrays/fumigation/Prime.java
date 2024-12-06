@@ -35,7 +35,7 @@ public class Prime {
             }
 
             // Check for factors from 3 to the square root of num
-            for (int i = 3; i * i < num; i += 2) {
+            for (int i = 3; i < Math.sqrt(num); i += 2) {
                 if (num % i == 0) {
                     return false; // Found a factor, not prime
                 }
