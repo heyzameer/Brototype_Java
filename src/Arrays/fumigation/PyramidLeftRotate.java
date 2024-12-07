@@ -1,6 +1,6 @@
 package Arrays.fumigation;
 
-public class Practice {
+public class PyramidLeftRotate {
     public static void main(String[] args) {
         int n = 5;
 
