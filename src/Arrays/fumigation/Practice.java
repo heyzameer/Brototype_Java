@@ -1,23 +1,24 @@
 package Arrays.fumigation;
-
+import java.util.Arrays;
 public class Practice {
     public static void main(String[] args) {
-        int n = 5;
+        int[] array ={1,2,3,4,5,6,7};
+        int[] freq = new int[array.length];
 
-        // Single loop for both patterns with ternary operator
-        for (int i = 0; i < 2 * n - 1; i++) {
-            int spaces = (i < n) ? (n - i - 1) : (i - n + 1);       // Calculate spaces
-            int stars = (i < n) ? (i + 1) : (2 * n - i - 1);        // Calculate stars
+        for (int i = 0; i < array.length; i++) {
+            if (freq[i]!=0) {
+                continue;
+            }
 
-            // Print spaces
-            for (int j = 0; j < spaces; j++) {
-                System.out.print("%");
+            int count = 1;
+            for (int j = i+1; j < array.length ; j++) {
+                if (array[i] == array[j]) {
+                    freq[j]= -1;
+                    count++;
+                }
             }
-            // Print stars
-            for (int j = 0; j < stars; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+            freq[i]=count;
         }
+        System.out.println(Arrays.toString(freq));
     }
 }
