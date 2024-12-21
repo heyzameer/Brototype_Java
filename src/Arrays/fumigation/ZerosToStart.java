@@ -1,4 +1,4 @@
-package Patterns.fumigation;
+package Arrays.fumigation;
 import java.util.Arrays;
 public class ZerosToStart {
     public static void main(String[] args) {

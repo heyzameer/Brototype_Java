@@ -7,6 +7,7 @@ Public
 Private
 Protected
 Default (Package-Private)
+
 1. Public Access Modifier
 Keyword: public
 Visibility: The class, method, constructor, or variable declared as public is accessible from anywhere, i.e., from any other class, package, or even from outside the program (in case of public classes).

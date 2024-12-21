@@ -1,22 +1,30 @@
 package Arrays.fumigation;
 import java.util.Arrays;
+
+import static Arrays.fumigation.PrimeNxtDelete2_2.isPrime;
+
 public class Practice {
     public static void main(String[] args) {
-       int n = 5;
-        for (int i = 0; i < n*2-1; i++) {
-            int spaces = (i<n)?n-i:i-n+2;
-            int stars = (i<n)?2*i+1:(2*n-1)-(i-n+1)*2;
-            for (int j = 0; j < spaces; j++) {
-                System.out.print(" ");
+        int[] array = {1,2,3,4,5,6,7};
+        int n = array.length;
+
+        for (int i = 0; i < n; i++) {
+            if(isPrime(array[i])) {
+                int k = 0;
+                int index = i + 1;
+                while (k < 2 && index < n){
+                    for (int j = index; j < n - 1; j++) {
+                        array[j] = array[j + 1];
+                    }
+                    k++;
+                    n--;
             }
-            for (int j = 0; j < stars; j++) {
-                if(j==0||j==stars-1||i==4){
-                System.out.print("*");
-                }else{
-                    System.out.print(" ");
-                }
             }
-            System.out.println();
         }
+        for (int i = 0; i < n; i++) {
+            System.out.println(array[i]);
+        }
+
     }
+
 }

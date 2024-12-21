@@ -9,7 +9,7 @@ In Java, **data types** are broadly categorized into **primitive** and **non-pri
 - **Characteristics:**
   1. **Predefined:** They are built into the language.
   2. **Not Objects:** They store values directly, not references.
-  3. **Fixed Size:** Each type has a specific size and range.
+  3. **Fixed Size:** Each type has a specific si`ze and range.
   4. **Efficient:** They are faster since they operate directly on memory.
 
 - **Types of Primitive Data Types in Java:**

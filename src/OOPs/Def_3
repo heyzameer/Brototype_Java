@@ -5,7 +5,7 @@ Here’s an explanation of the listed Java concepts:
 ### **Class**
 A **class** is a blueprint for creating objects. It defines properties (fields) and methods (functions) that objects of the class can use.
 
-Example:
+Example :
 // Define the Car class
 class Car {
     String brand;
@@ -144,6 +144,7 @@ class Car {
 public class Main {
     public static void main(String[] args) {
         // Using the Default Constructor
+
         Car car1 = new Car();
         car1.drive();  // Output: Unknown is driving at 0 km/h.
 
@@ -731,7 +732,8 @@ Caught exception: Age must be 18 or above
 2. **Exception**: Issues that can be handled by the program, split into:
    - **Checked exceptions** (e.g., `IOException`, `SQLException`).
    - **Unchecked exceptions** (e.g., `NullPointerException`, `ArithmeticException`).
-3. **Try-Catch**: Used to catch and handle exceptions. The code that may throw an exception is in the `try` block, and the exception handling is in the `catch` block.
+3. **Try-Catch**: Used to catch and handle exceptions. The code that may throw an exception is in the `try` block, and the exception handling is in the `catch` block..
+
 4. **Finally**: Block executed after `try` and `catch` to ensure cleanup actions are performed.
 5. **Throw and Throws**: Use `throw` to throw exceptions manually and `throws` to declare exceptions in method signatures.
 

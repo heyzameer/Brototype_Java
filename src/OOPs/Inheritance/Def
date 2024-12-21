@@ -10,7 +10,13 @@ The final Keyword
 If you don't want other classes to inherit from a class, use the final keyword:
 
 If you try to access a final class, Java will generate an error:
-
+The final keyword in Java is used to define constants, prevent method overriding, and prevent inheritance. It can be applied to variables, methods, and classes.
+Key Points:
+Final Variables: Cannot be reassigned after initialization.
+Final Methods: Cannot be overridden by subclasses.
+Final Classes: Cannot be subclassed.
+Final Parameters: Cannot be modified within the method.
+Final Local Variables: Can only be assigned once within a method
 
 
 Inheritance in Java
@@ -31,3 +37,9 @@ Benefits of Inheritance:
 Code Reusability: Inheritance allows the reuse of code from the parent class, so you don’t need to write the same code multiple times.
 Method Overriding: Subclasses can modify or extend the behavior of methods inherited from the parent class.
 Extensibility: Subclasses can add more features or modify the inherited features without changing the parent class.
+
+super keyword
+Constructor Call: super() is used to call a constructor of the superclass.
+Method Call: super.methodName() is used to call a superclass method, even if it’s overridden in the subclass.
+Field Access: super.fieldName is used to access a field of the superclass if the subclass has a field with the same name.
+Access Parent Class Members: super allows you to access the members (fields and methods) of the superclass that are hidden or overridden by the subclass.

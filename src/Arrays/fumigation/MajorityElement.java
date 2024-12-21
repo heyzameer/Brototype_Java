@@ -27,9 +27,12 @@ public class MajorityElement {
 
         // Print results
         for (int i = 0; i < arr.length; i++) {
-            if (freq[i] >n/2) { // Only print for unvisited indices
+            if (freq[i] >n/2) {
                 System.out.println("Element " + arr[i] + " occurs " + freq[i] + " times");
+                return;
             }
         }
+        System.out.println("no majority element");
     }
+
 }

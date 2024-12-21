@@ -1,4 +1,4 @@
-package Patterns.fumigation;
+package Arrays.fumigation;
 
 import java.util.Arrays;
 
